@@ -1,42 +1,50 @@
 import { Upload, Mail, Calendar, TrendingUp, CheckCircle, Shield } from 'lucide-react';
-
+import { useNavigate } from "react-router-dom";
 import Button from '../components/button.jsx'
 import Card from '../components/Card.jsx'
 
 const HomePage = () => {
    const features = [
     {
-      icon: <Upload className="w-6 h-6 text-purple-600" />,
+      icon: <Upload className="w-6 h-6 text-blue-900" />,
       title: "Excel Upload",
       description: "Simply drag and drop your Excel file with recipient information. We'll validate emails and show you a preview instantly."
     },
     {
-      icon: <Mail className="w-6 h-6 text-purple-600" />,
+      icon: <Mail className="w-6 h-6 text-blue-900" />,
       title: "Gmail Integration",
       description: "Connect your Gmail account securely using app passwords. Your credentials are encrypted and never shared."
     },
     {
-      icon: <Calendar className="w-6 h-6 text-purple-600" />,
+      icon: <Calendar className="w-6 h-6 text-blue-900" />,
       title: "Smart Scheduling",
       description: "Choose the exact date and time for your emails to be sent. Schedule for optimal engagement rates."
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-purple-600" />,
+      icon: <TrendingUp className="w-6 h-6 text-blue-900" />,
       title: "Campaign Tracking",
       description: "Monitor your campaigns in real-time. See which emails are scheduled, sending, or successfully delivered."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-purple-600" />,
+      icon: <CheckCircle className="w-6 h-6 text-blue-600" />,
       title: "Email Validation",
       description: "Automatic validation of email addresses ensures your messages reach the right inbox every time."
     },
     {
-      icon: <Shield className="w-6 h-6 text-purple-600" />,
+      icon: <Shield className="w-6 h-6 text-blue-600" />,
       title: "Secure & Private",
       description: "Your data is encrypted and secure. We follow industry best practices to protect your information."
     }
   ];
+  const navigate=useNavigate();
 
+  
+  const handleClick = () => {
+   
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 800);
+  };
   
   return (
     <div className="flex flex-col min-h-screen">
@@ -45,7 +53,7 @@ const HomePage = () => {
       <header className="h-16 flex items-center justify-between px-6 border-b border-gray-300">
   <h1 className="text-2xl font-semibold">Mail Sender</h1>
   <nav className="space-x-4">
-    <Button className="bg-blue-900 text-white border rounded-lg">Get Started</Button> 
+    <Button onClick={handleClick} className="bg-blue-900 text-white border rounded-lg hover:bg-blue-700">Get Started</Button> 
   </nav>
 </header>
 
@@ -61,11 +69,11 @@ const HomePage = () => {
           </p>
 
       <div className="flex space-x-4">
-    <Button className="bg-blue-900 py-7 px-12 text-xl rounded-lg text-white hover:bg-blue-800">
+    <Button className="bg-blue-900 py-7 px-12 text-xl rounded-lg text-white hover:bg-blue-700">
     Start Scheduling Now
   </Button>
 
-  <Button className="border border-gray-400 py-7 px-12 text-xl rounded-lg text-gray-800 hover:bg-gray-400">
+  <Button className="border border-gray-400 py-7 px-12 text-xl rounded-lg text-gray-800 hover:bg-gray-100">
     View Demo
   </Button>
 </div>
@@ -124,40 +132,40 @@ const HomePage = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
         {/* Step 1 */}
         <div className="flex flex-col items-center text-center">
-          <div className="w-25 h-25 rounded-full bg-purple-600 flex items-center justify-center text-white text-4xl font-bold mb-6 relative z-10">
+          <div className="w-25 h-25 rounded-full bg-blue-900 flex items-center justify-center text-white text-4xl font-bold mb-6 relative z-10">
             1
           </div>
-          <Upload className="w-12 h-12 text-purple-600 mb-4" />
+          <Upload className="w-12  h-12 text-blue-600 mb-4" />
           <h3 className="text-xl font-semibold mb-3">Upload Excel</h3>
           <p className="text-gray-600">Upload your recipient list with names and email addresses</p>
         </div>
 
         {/* Step 2 */}
         <div className="flex flex-col items-center text-center">
-          <div className="w-25 h-25 rounded-full bg-purple-600 flex items-center justify-center text-white text-4xl font-bold mb-6 relative z-10">
+          <div className="w-25 h-25 rounded-full bg-blue-900 flex items-center justify-center text-white text-4xl font-bold mb-6 relative z-10">
             2
           </div>
-          <Mail className="w-12 h-12 text-purple-600 mb-4" />
+          <Mail className="w-12 h-12 text-blue-600 mb-4" />
           <h3 className="text-xl font-semibold mb-3">Configure Gmail</h3>
           <p className="text-gray-600">Securely connect your Gmail account with app password</p>
         </div>
 
         {/* Step 3 */}
         <div className="flex flex-col items-center text-center">
-          <div className="w-25 h-25 rounded-full bg-purple-600 flex items-center justify-center text-white text-4xl font-bold mb-6 relative z-10">
+          <div className="w-25 h-25 rounded-full bg-blue-900 flex items-center justify-center text-white text-4xl font-bold mb-6 relative z-10">
             3
           </div>
-          <TrendingUp className="w-12 h-12 text-purple-600 mb-4" />
+          <TrendingUp className="w-12 h-12 text-blue-600 mb-4" />
           <h3 className="text-xl font-semibold mb-3">Compose Email</h3>
           <p className="text-gray-600">Write your message and preview how it will appear</p>
         </div>
 
         {/* Step 4 */}
         <div className="flex flex-col items-center text-center">
-          <div className="w-25 h-25 rounded-full bg-purple-600 flex items-center justify-center text-white text-4xl font-bold mb-6 relative z-10">
+          <div className="w-25 h-25 rounded-full bg-blue-900 flex items-center justify-center text-white text-4xl font-bold mb-6 relative z-10">
             4
           </div>
-          <Calendar className="w-12 h-12 text-purple-600 mb-4" />
+          <Calendar className="w-12 h-12 text-blue-600 mb-4" />
           <h3 className="text-xl font-semibold mb-3">Schedule & Send</h3>
           <p className="text-gray-600">Choose when to send and let us handle the rest</p>
         </div>
@@ -173,7 +181,7 @@ const HomePage = () => {
     <p className="text-gray-600 text-xl mb-10">
       Join hundreds of users who are saving time and reaching more people with MailScheduler
     </p>
-    <Button className="bg-purple-600 hover:bg-purple-700 text-white text-xl px-12 py-6 rounded-lg shadow-lg">
+    <Button className="bg-blue-900 hover:bg-purple-700 text-white text-xl px-12 py-6 rounded-lg shadow-lg">
       Get Started Now
     </Button>
     <p className="text-gray-500 text-sm mt-6">
