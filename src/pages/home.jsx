@@ -49,8 +49,7 @@ const HomePage = () => {
   return (
     <div className="flex flex-col min-h-screen">
 
-      {/* 🧭 Navbar */}
-      <header className="h-16 flex items-center justify-between px-6 border-b border-gray-300">
+      <header className="fixed top-0 left-0 w-full h-16 flex items-center justify-between px-6 border bg-white border-gray-300">
   <h1 className="text-2xl font-semibold">Mail Sender</h1>
   <nav className="space-x-4">
     <Button onClick={handleClick} className="bg-blue-900 text-white border rounded-lg hover:bg-blue-700">Get Started</Button> 
