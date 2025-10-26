@@ -26,12 +26,12 @@ const HomePage = () => {
       description: "Monitor your campaigns in real-time. See which emails are scheduled, sending, or successfully delivered."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-blue-600" />,
+      icon: <CheckCircle className="w-6 h-6 text-blue-900" />,
       title: "Email Validation",
       description: "Automatic validation of email addresses ensures your messages reach the right inbox every time."
     },
     {
-      icon: <Shield className="w-6 h-6 text-blue-600" />,
+      icon: <Shield className="w-6 h-6 text-blue-900" />,
       title: "Secure & Private",
       description: "Your data is encrypted and secure. We follow industry best practices to protect your information."
     }
@@ -49,52 +49,142 @@ const HomePage = () => {
   return (
     <div className="flex flex-col min-h-screen">
 
-      <header className="fixed top-0 left-0 w-full h-16 flex items-center justify-between px-6 border bg-white border-gray-300">
-  <h1 className="text-2xl font-semibold">Mail Sender</h1>
+     <header className="fixed top-0 left-0 w-full h-16 flex items-center justify-between px-6 border bg-white border-gray-300 z-50">
+  <div className="flex items-center gap-2.5">
+    <svg className="w-10 h-10" viewBox="0 0 170 150" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="85" cy="75" r="75" fill="#1e3a8a"/>
+      <text x="60" y="105" fontFamily="Arial, sans-serif" fontSize="90" fontWeight="bold" fill="#ffffff">S</text>
+      <circle cx="105" cy="75" r="10" fill="#60a5fa"/>
+    </svg>
+    <h1 className="text-2xl font-semibold">Mailvio</h1>
+  </div>
   <nav className="space-x-4">
-    <Button onClick={handleClick} className="bg-blue-900 text-white border rounded-lg hover:bg-blue-700">Get Started</Button> 
+    <Button onClick={handleClick} className="bg-blue-900 text-white border rounded-lg hover:bg-blue-800">Get Started</Button> 
   </nav>
 </header>
 
       <div className="flex flex-1">
 
-        <main className="flex-1 p-6 bg-white m-15">
-          <div className="text-7xl font-bold "> 
-          <h2>Effortless Bulk Email</h2>
-          <h2 className="text-blue-900"> Scheduling</h2>
+<main className="flex-1 p-6 bg-white m-15 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  {/* Left Side - Text Content */}
+  <div>
+    <div className="text-7xl font-bold"> 
+      <h2>Effortless Bulk Email</h2>
+      <h2 className="text-blue-900"> Scheduling</h2>
+    </div>
+    <p className="text-gray-500 text-xl my-10">
+      Upload your recipient list, compose your message, and schedule<br/> emails to be sent at the perfect time. Simple, powerful, and built<br/> for scale.
+    </p>
+
+    <div className="flex space-x-4">
+      <Button onClick={handleClick} className="bg-blue-900 py-7 px-12 text-xl rounded-lg text-white hover:bg-blue-800">
+        Start Scheduling Now
+      </Button>
+      <Button className="border border-gray-400 py-7 px-12 text-xl rounded-lg text-gray-800 hover:bg-gray-100">
+        View Demo
+      </Button>
+    </div>
+
+    <div className="flex items-center space-x-15 mt-8">
+      <div className="text-center">
+        <p className="text-4xl font-bold">10,000+</p>
+        <p className="text-gray-700">Emails Sent</p>
+      </div>
+      <div className="text-center">
+        <p className="text-4xl font-bold">500+</p>
+        <p className="text-gray-700">Active Users</p>
+      </div>
+      <div className="text-center">
+        <p className="text-4xl font-bold">99.9%</p>
+        <p className="text-gray-700">Delivery Rate</p>
+      </div>
+    </div>
+  </div>
+
+  {/* Right Side - Animated Email Mockup */}
+  <div className="relative hidden lg:block ml-20">
+    <div className="relative transform rotate-6 hover:rotate-3 transition-transform duration-500 hover:scale-105">
+      <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-8 max-w-lg overflow-hidden">
+        {/* Browser-like header */}
+        <div className="flex items-center gap-2 mb-5 pb-4 border-b-2 border-gray-100">
+          <div className="flex gap-1.5">
+            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
-          <p className="text-gray-500 text-xl my-10">
-            Upload your recipient list, compose your message, and schedule<br/> emails to be sent at the perfect time. Simple, powerful, and built<br/> for scale.
-          </p>
+          <div className="flex-1 bg-gray-100 rounded px-3 py-1.5 text-xs text-gray-500">
+            mailvio.com/compose
+          </div>
+        </div>
+        
+        {/* Compose Area with Flying Emails */}
+        <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-5 mb-5 overflow-hidden min-h-[180px]">
+          {/* Flying Email Envelopes */}
+          <div className="absolute top-8 -left-16 animate-[flyEmail_3s_ease-in-out_infinite]">
+            <div className="w-12 h-8 bg-white border-2 border-blue-900 rounded shadow-md relative">
+              <div className="absolute -top-0.5 left-0 w-full h-4 bg-blue-900" 
+                   style={{clipPath: 'polygon(0 0, 50% 60%, 100% 0)'}}></div>
+            </div>
+          </div>
+          <div className="absolute top-16 -left-16 animate-[flyEmail_3s_ease-in-out_infinite_1s]">
+            <div className="w-12 h-8 bg-white border-2 border-blue-900 rounded shadow-md relative">
+              <div className="absolute -top-0.5 left-0 w-full h-4 bg-blue-900" 
+                   style={{clipPath: 'polygon(0 0, 50% 60%, 100% 0)'}}></div>
+            </div>
+          </div>
+          <div className="absolute top-24 -left-16 animate-[flyEmail_3s_ease-in-out_infinite_2s]">
+            <div className="w-12 h-8 bg-white border-2 border-blue-900 rounded shadow-md relative">
+              <div className="absolute -top-0.5 left-0 w-full h-4 bg-blue-900" 
+                   style={{clipPath: 'polygon(0 0, 50% 60%, 100% 0)'}}></div>
+            </div>
+          </div>
 
-      <div className="flex space-x-4">
-    <Button className="bg-blue-900 py-7 px-12 text-xl rounded-lg text-white hover:bg-blue-700">
-    Start Scheduling Now
-  </Button>
+          <div className="flex items-center gap-3 mb-4 relative z-10">
+            <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-white text-lg">
+              ✉️
+            </div>
+            <div className="text-lg font-semibold text-gray-800">Composing Email...</div>
+          </div>
+          
+          <div className="space-y-2 relative z-10">
+            <div className="h-2 bg-gray-300 rounded animate-pulse"></div>
+            <div className="h-2 bg-gray-300 rounded w-4/5 animate-pulse delay-100"></div>
+            <div className="h-2 bg-gray-300 rounded w-3/5 animate-pulse delay-200"></div>
+          </div>
 
-  <Button className="border border-gray-400 py-7 px-12 text-xl rounded-lg text-gray-800 hover:bg-gray-100">
-    View Demo
-  </Button>
-</div>
+          {/* Floating Particles */}
+          <div className="absolute bottom-2 left-0 w-full h-full pointer-events-none">
+            <div className="absolute w-1.5 h-1.5 bg-blue-400 rounded-full animate-[particle_4s_linear_infinite] left-[20%]"></div>
+            <div className="absolute w-1.5 h-1.5 bg-blue-400 rounded-full animate-[particle_4s_linear_infinite_0.5s] left-[40%]"></div>
+            <div className="absolute w-1.5 h-1.5 bg-blue-400 rounded-full animate-[particle_4s_linear_infinite_1s] left-[60%]"></div>
+            <div className="absolute w-1.5 h-1.5 bg-blue-400 rounded-full animate-[particle_4s_linear_infinite_1.5s] left-[80%]"></div>
+          </div>
+        </div>
 
-<div className="flex items-center space-x-15 mt-8">
-  <div className="text-center">
-    <p className="text-4xl font-bold">10,000+</p>
-    <p className="text-gray-700">Emails Sent</p>
+        {/* Stats */}
+        <div className="grid grid-cols-2 gap-3 mb-5">
+          <div className="bg-gray-300 p-4 rounded-xl text-center">
+            <div className="text-2xl font-bold text-blue-900">1,250</div>
+            <div className="text-xs text-gray-600 mt-1">Emails Sent</div>
+          </div>
+          <div className="bg-gray-300 p-4 rounded-xl text-center">
+            <div className="text-2xl font-bold text-blue-900">98.5%</div>
+            <div className="text-xs text-gray-600 mt-1">Delivered</div>
+          </div>
+        </div>
+
+        {/* Send Button */}
+        <button className="w-full bg-blue-900 text-white py-4 rounded-xl font-semibold hover:bg-blue-800 transition-all hover:-translate-y-1 hover:shadow-xl">
+          Send Campaign →
+        </button>
+      </div>
+      
+      {/* Decorative Blurs */}
+      <div className="absolute -top-12 -right-12 w-32 h-32 bg-blue-300 rounded-full blur-3xl opacity-40 animate-[float_6s_ease-in-out_infinite]"></div>
+      <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-purple-300 rounded-full blur-3xl opacity-40 animate-[float_6s_ease-in-out_infinite_2s]"></div>
+    </div>
   </div>
-
-  <div className="text-center">
-    <p className="text-4xl font-bold">500+</p>
-    <p className="text-gray-700">Active Users</p>
-  </div>
-
-  <div className="text-center">
-    <p className="text-4xl font-bold">99.9%</p>
-    <p className="text-gray-700">Delivery Rate</p>
-  </div>
-</div>
-
-        </main>
+</main>
       </div>
 
      <div className="flex flex-col flex-1 items-center text-center space-y-4 mt-10">
@@ -106,7 +196,7 @@ const HomePage = () => {
   </h3>
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mt-12 px-6">
   {features.map((feature, index) => (
-    <Card className="hover:bg-gray-50 border-gray-200"
+    <Card className="hover:bg-gray-50  border-gray-200"
       key={index}
       icon={feature.icon}
       title={feature.title}
@@ -180,7 +270,7 @@ const HomePage = () => {
     <p className="text-gray-600 text-xl mb-10">
       Join hundreds of users who are saving time and reaching more people with MailScheduler
     </p>
-    <Button className="bg-blue-900 hover:bg-purple-700 text-white text-xl px-12 py-6 rounded-lg shadow-lg">
+    <Button className="bg-blue-900 hover:bg-blue-800 text-white text-xl px-12 py-6 rounded-lg shadow-lg">
       Get Started Now
     </Button>
     <p className="text-gray-500 text-sm mt-6">
@@ -198,8 +288,12 @@ const HomePage = () => {
             {/* Brand Section */}
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Mail className="w-6 h-6 text-purple-600" />
-                <h3 className="text-xl font-semibold">MailScheduler</h3>
+              <svg className="w-10 h-10" viewBox="0 0 170 150" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="85" cy="75" r="75" fill="#1e3a8a"/>
+      <text x="60" y="105" fontFamily="Arial, sans-serif" fontSize="90" fontWeight="bold" fill="#ffffff">S</text>
+      <circle cx="105" cy="75" r="10" fill="#60a5fa"/>
+    </svg>
+                <h3 className="text-xl font-semibold">Mailvio</h3>
               </div>
               <p className="text-gray-600 text-sm">
                 Effortless bulk email scheduling for everyone
