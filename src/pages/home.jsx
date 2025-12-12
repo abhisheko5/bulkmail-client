@@ -102,7 +102,7 @@ const HomePage = () => {
   </div>
 
   {/* Right Side - Animated Email Mockup */}
-  <div className="relative hidden lg:block ml-20">
+  <div className="relative hidden lg:block ml-20  ">
     <div className="relative transform rotate-6 hover:rotate-3 transition-transform duration-500 hover:scale-105">
       <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-8 max-w-lg overflow-hidden">
         {/* Browser-like header */}
